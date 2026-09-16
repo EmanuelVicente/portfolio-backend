@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { GoogleGenAI } from '@google/genai';
+import { getProfileKnowledge } from './modules/profile/knowledge.service.js';
 
 const app = express();
 
@@ -46,6 +47,24 @@ app.get('/debug/gemini', async (_req, res) => {
     });
   } catch (error) {
     console.error('Gemini debug error:', error);
+
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+});
+
+app.get('/debug/knowledge', async (_req, res) => {
+  try {
+    const knowledge = await getProfileKnowledge();
+
+    res.json({
+      ok: true,
+      knowledgeLength: knowledge.length,
+    });
+  } catch (error) {
+    console.error('Knowledge debug error:', error);
 
     res.status(500).json({
       ok: false,
