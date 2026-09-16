@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Profile {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  role        String
+  summary     String
+  experiences Experience[]
+  educations  Education[]
+  projects    Project[]
+  skills      Skill[]
+}
+
+model Experience {
+  id           Int                     @id @default(autoincrement())
+  company      String
+  role         String
+  description  String
+  profileId    Int
+  profile      Profile                 @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  technologies Technology[]            @relation("ExperienceTechnologies")
+  highlights   ExperienceHighlight[]
+
+  @@unique([profileId, company, role])
+}
+
+model Education {
+  id          Int     @id @default(autoincrement())
+  institution String
+  degree      String
+  profileId   Int
+  profile     Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@unique([profileId, institution, degree])
+}
+
+model Project {
+  id           Int                @id @default(autoincrement())
+  name         String
+  type         String
+  description  String
+  profileId    Int
+  profile      Profile            @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  technologies Technology[]       @relation("ProjectTechnologies")
+  highlights   ProjectHighlight[]
+
+  @@unique([profileId, name])
+}
+
+model Skill {
+  id        Int     @id @default(autoincrement())
+  name      String
+  category  String
+  profileId Int
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  @@unique([profileId, category, name])
+}
+
+model Technology {
+  id          Int          @id @default(autoincrement())
+  name        String       @unique
+  experiences Experience[] @relation("ExperienceTechnologies")
+  projects    Project[]    @relation("ProjectTechnologies")
+}
+
+model ExperienceHighlight {
+  id           Int        @id @default(autoincrement())
+  text         String
+  experienceId Int
+  experience   Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+}
+
+model ProjectHighlight {
+  id        Int     @id @default(autoincrement())
+  text      String
+  projectId Int
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
