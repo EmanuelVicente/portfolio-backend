@@ -39,6 +39,27 @@ app.get('/debug/config', (_req, res) => {
   });
 });
 
+app.get('/debug/gemini', async (_req, res) => {
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-3.6-flash',
+      contents: 'Say hello',
+    });
+
+    res.json({
+      ok: true,
+      response: response.text,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+});
+
 app.use(errorHandler);
 
 export default app;
