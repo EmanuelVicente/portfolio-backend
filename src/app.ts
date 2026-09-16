@@ -7,6 +7,9 @@ import { GoogleGenAI } from '@google/genai';
 import { getProfileKnowledge } from './modules/profile/knowledge.service.js';
 import { generateAnswer } from './modules/assistant/ai/ai.service.js';
 
+import assistantRoutes from './modules/assistant/assistant.routes.js';
+import profileRoutes from './modules/profile/profile.routes.js';
+
 const app = express();
 
 const client = new GoogleGenAI({
@@ -26,6 +29,8 @@ app.use(express.json());
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
+app.use('/assistant', assistantRoutes);
+app.use('/profile', profileRoutes);
 
 app.get('/debug/config', (_req, res) => {
   res.json({
