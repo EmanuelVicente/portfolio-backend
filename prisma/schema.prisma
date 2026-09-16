@@ -12,21 +12,21 @@ model Profile {
   name        String       @unique
   role        String
   summary     String
-  experiences Experience[]
   educations  Education[]
+  experiences Experience[]
   projects    Project[]
   skills      Skill[]
 }
 
 model Experience {
-  id           Int                     @id @default(autoincrement())
+  id           Int                   @id @default(autoincrement())
   company      String
   role         String
   description  String
   profileId    Int
-  profile      Profile                 @relation(fields: [profileId], references: [id], onDelete: Cascade)
-  technologies Technology[]            @relation("ExperienceTechnologies")
+  profile      Profile               @relation(fields: [profileId], references: [id], onDelete: Cascade)
   highlights   ExperienceHighlight[]
+  technologies Technology[]          @relation("ExperienceTechnologies")
 
   @@unique([profileId, company, role])
 }
@@ -48,8 +48,8 @@ model Project {
   description  String
   profileId    Int
   profile      Profile            @relation(fields: [profileId], references: [id], onDelete: Cascade)
-  technologies Technology[]       @relation("ProjectTechnologies")
   highlights   ProjectHighlight[]
+  technologies Technology[]       @relation("ProjectTechnologies")
 
   @@unique([profileId, name])
 }

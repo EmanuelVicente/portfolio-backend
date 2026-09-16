@@ -3,6 +3,10 @@ import { AppError } from '../../errors/AppError.js';
 import { findProfile } from './profile.repository.js';
 
 export async function getProfileKnowledge(): Promise<string> {
+  console.log('PROFILE_ID:', process.env.PROFILE_ID);
+  console.log('DATABASE_HOST:', process.env.DATABASE_URL?.match(/@([^/]+)/)?.[1]);
+  console.log('GEMINI_KEY_EXISTS:', Boolean(process.env.GEMINI_API_KEY));
+
   const profileId = Number(process.env.PROFILE_ID);
 
   if (!Number.isInteger(profileId) || profileId <= 0) {
