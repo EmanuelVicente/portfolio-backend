@@ -5,6 +5,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { GoogleGenAI } from '@google/genai';
 import { getProfileKnowledge } from './modules/profile/knowledge.service.js';
+import { generateAnswer } from './modules/assistant/ai/ai.service.js';
 
 const app = express();
 
@@ -65,6 +66,31 @@ app.get('/debug/knowledge', async (_req, res) => {
     });
   } catch (error) {
     console.error('Knowledge debug error:', error);
+
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+});
+
+app.get('/debug/assistant', async (_req, res) => {
+  try {
+    const knowledge = await getProfileKnowledge();
+
+    const answer = await generateAnswer({
+      instructions: 'Answer the question briefly and clearly.',
+      knowledge,
+      question: 'What is Emanuel’s name?',
+      history: [],
+    });
+
+    res.json({
+      ok: true,
+      answer,
+    });
+  } catch (error) {
+    console.error('Assistant debug error:', error);
 
     res.status(500).json({
       ok: false,
