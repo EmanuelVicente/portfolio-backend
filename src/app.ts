@@ -31,6 +31,13 @@ app.get('/health', (_req, res) => {
 
 app.use('/assistant', assistantRoutes);
 app.use('/profile', profileRoutes);
+app.get('/debug/config', (_req, res) => {
+  res.json({
+    profileId: process.env.PROFILE_ID,
+    databaseHost: process.env.DATABASE_URL?.match(/@([^/]+)/)?.[1] ?? null,
+    geminiKeyExists: Boolean(process.env.GEMINI_API_KEY),
+  });
+});
 
 app.use(errorHandler);
 
