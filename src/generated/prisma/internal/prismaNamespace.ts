@@ -404,7 +404,8 @@ export const ModelName = {
   Skill: 'Skill',
   Technology: 'Technology',
   ExperienceHighlight: 'ExperienceHighlight',
-  ProjectHighlight: 'ProjectHighlight'
+  ProjectHighlight: 'ProjectHighlight',
+  AssistantExchange: 'AssistantExchange'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -420,7 +421,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "profile" | "experience" | "education" | "project" | "skill" | "technology" | "experienceHighlight" | "projectHighlight"
+    modelProps: "profile" | "experience" | "education" | "project" | "skill" | "technology" | "experienceHighlight" | "projectHighlight" | "assistantExchange"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1016,6 +1017,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    AssistantExchange: {
+      payload: Prisma.$AssistantExchangePayload<ExtArgs>
+      fields: Prisma.AssistantExchangeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AssistantExchangeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AssistantExchangeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        findFirst: {
+          args: Prisma.AssistantExchangeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AssistantExchangeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        findMany: {
+          args: Prisma.AssistantExchangeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>[]
+        }
+        create: {
+          args: Prisma.AssistantExchangeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        createMany: {
+          args: Prisma.AssistantExchangeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AssistantExchangeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>[]
+        }
+        delete: {
+          args: Prisma.AssistantExchangeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        update: {
+          args: Prisma.AssistantExchangeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        deleteMany: {
+          args: Prisma.AssistantExchangeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AssistantExchangeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AssistantExchangeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>[]
+        }
+        upsert: {
+          args: Prisma.AssistantExchangeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AssistantExchangePayload>
+        }
+        aggregate: {
+          args: Prisma.AssistantExchangeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAssistantExchange>
+        }
+        groupBy: {
+          args: Prisma.AssistantExchangeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssistantExchangeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AssistantExchangeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AssistantExchangeCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1133,6 +1208,16 @@ export const ProjectHighlightScalarFieldEnum = {
 export type ProjectHighlightScalarFieldEnum = (typeof ProjectHighlightScalarFieldEnum)[keyof typeof ProjectHighlightScalarFieldEnum]
 
 
+export const AssistantExchangeScalarFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer',
+  createdAt: 'createdAt'
+} as const
+
+export type AssistantExchangeScalarFieldEnum = (typeof AssistantExchangeScalarFieldEnum)[keyof typeof AssistantExchangeScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1180,6 +1265,20 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -1355,6 +1454,7 @@ export type GlobalOmitConfig = {
   technology?: Prisma.TechnologyOmit
   experienceHighlight?: Prisma.ExperienceHighlightOmit
   projectHighlight?: Prisma.ProjectHighlightOmit
+  assistantExchange?: Prisma.AssistantExchangeOmit
 }
 
 /* Types for Logging */

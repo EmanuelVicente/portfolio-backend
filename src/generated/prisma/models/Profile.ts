@@ -208,8 +208,8 @@ export type ProfileWhereInput = {
   name?: Prisma.StringFilter<"Profile"> | string
   role?: Prisma.StringFilter<"Profile"> | string
   summary?: Prisma.StringFilter<"Profile"> | string
-  experiences?: Prisma.ExperienceListRelationFilter
   educations?: Prisma.EducationListRelationFilter
+  experiences?: Prisma.ExperienceListRelationFilter
   projects?: Prisma.ProjectListRelationFilter
   skills?: Prisma.SkillListRelationFilter
 }
@@ -219,8 +219,8 @@ export type ProfileOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
   summary?: Prisma.SortOrder
-  experiences?: Prisma.ExperienceOrderByRelationAggregateInput
   educations?: Prisma.EducationOrderByRelationAggregateInput
+  experiences?: Prisma.ExperienceOrderByRelationAggregateInput
   projects?: Prisma.ProjectOrderByRelationAggregateInput
   skills?: Prisma.SkillOrderByRelationAggregateInput
 }
@@ -233,8 +233,8 @@ export type ProfileWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.ProfileWhereInput | Prisma.ProfileWhereInput[]
   role?: Prisma.StringFilter<"Profile"> | string
   summary?: Prisma.StringFilter<"Profile"> | string
-  experiences?: Prisma.ExperienceListRelationFilter
   educations?: Prisma.EducationListRelationFilter
+  experiences?: Prisma.ExperienceListRelationFilter
   projects?: Prisma.ProjectListRelationFilter
   skills?: Prisma.SkillListRelationFilter
 }, "id" | "name">
@@ -265,8 +265,8 @@ export type ProfileCreateInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   projects?: Prisma.ProjectCreateNestedManyWithoutProfileInput
   skills?: Prisma.SkillCreateNestedManyWithoutProfileInput
 }
@@ -276,8 +276,8 @@ export type ProfileUncheckedCreateInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationUncheckedCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   projects?: Prisma.ProjectUncheckedCreateNestedManyWithoutProfileInput
   skills?: Prisma.SkillUncheckedCreateNestedManyWithoutProfileInput
 }
@@ -286,8 +286,8 @@ export type ProfileUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   projects?: Prisma.ProjectUpdateManyWithoutProfileNestedInput
   skills?: Prisma.SkillUpdateManyWithoutProfileNestedInput
 }
@@ -297,8 +297,8 @@ export type ProfileUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUncheckedUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   projects?: Prisma.ProjectUncheckedUpdateManyWithoutProfileNestedInput
   skills?: Prisma.SkillUncheckedUpdateManyWithoutProfileNestedInput
 }
@@ -537,8 +537,8 @@ export type ProfileCreateWithoutProjectsInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   skills?: Prisma.SkillCreateNestedManyWithoutProfileInput
 }
 
@@ -547,8 +547,8 @@ export type ProfileUncheckedCreateWithoutProjectsInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationUncheckedCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   skills?: Prisma.SkillUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -572,8 +572,8 @@ export type ProfileUpdateWithoutProjectsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   skills?: Prisma.SkillUpdateManyWithoutProfileNestedInput
 }
 
@@ -582,8 +582,8 @@ export type ProfileUncheckedUpdateWithoutProjectsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUncheckedUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   skills?: Prisma.SkillUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -591,8 +591,8 @@ export type ProfileCreateWithoutSkillsInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceCreateNestedManyWithoutProfileInput
   projects?: Prisma.ProjectCreateNestedManyWithoutProfileInput
 }
 
@@ -601,8 +601,8 @@ export type ProfileUncheckedCreateWithoutSkillsInput = {
   name: string
   role: string
   summary: string
-  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   educations?: Prisma.EducationUncheckedCreateNestedManyWithoutProfileInput
+  experiences?: Prisma.ExperienceUncheckedCreateNestedManyWithoutProfileInput
   projects?: Prisma.ProjectUncheckedCreateNestedManyWithoutProfileInput
 }
 
@@ -626,8 +626,8 @@ export type ProfileUpdateWithoutSkillsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUpdateManyWithoutProfileNestedInput
   projects?: Prisma.ProjectUpdateManyWithoutProfileNestedInput
 }
 
@@ -636,8 +636,8 @@ export type ProfileUncheckedUpdateWithoutSkillsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
-  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   educations?: Prisma.EducationUncheckedUpdateManyWithoutProfileNestedInput
+  experiences?: Prisma.ExperienceUncheckedUpdateManyWithoutProfileNestedInput
   projects?: Prisma.ProjectUncheckedUpdateManyWithoutProfileNestedInput
 }
 
@@ -647,15 +647,15 @@ export type ProfileUncheckedUpdateWithoutSkillsInput = {
  */
 
 export type ProfileCountOutputType = {
-  experiences: number
   educations: number
+  experiences: number
   projects: number
   skills: number
 }
 
 export type ProfileCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  experiences?: boolean | ProfileCountOutputTypeCountExperiencesArgs
   educations?: boolean | ProfileCountOutputTypeCountEducationsArgs
+  experiences?: boolean | ProfileCountOutputTypeCountExperiencesArgs
   projects?: boolean | ProfileCountOutputTypeCountProjectsArgs
   skills?: boolean | ProfileCountOutputTypeCountSkillsArgs
 }
@@ -673,15 +673,15 @@ export type ProfileCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * ProfileCountOutputType without action
  */
-export type ProfileCountOutputTypeCountExperiencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ExperienceWhereInput
+export type ProfileCountOutputTypeCountEducationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EducationWhereInput
 }
 
 /**
  * ProfileCountOutputType without action
  */
-export type ProfileCountOutputTypeCountEducationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EducationWhereInput
+export type ProfileCountOutputTypeCountExperiencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExperienceWhereInput
 }
 
 /**
@@ -704,8 +704,8 @@ export type ProfileSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   role?: boolean
   summary?: boolean
-  experiences?: boolean | Prisma.Profile$experiencesArgs<ExtArgs>
   educations?: boolean | Prisma.Profile$educationsArgs<ExtArgs>
+  experiences?: boolean | Prisma.Profile$experiencesArgs<ExtArgs>
   projects?: boolean | Prisma.Profile$projectsArgs<ExtArgs>
   skills?: boolean | Prisma.Profile$skillsArgs<ExtArgs>
   _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
@@ -734,8 +734,8 @@ export type ProfileSelectScalar = {
 
 export type ProfileOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "role" | "summary", ExtArgs["result"]["profile"]>
 export type ProfileInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  experiences?: boolean | Prisma.Profile$experiencesArgs<ExtArgs>
   educations?: boolean | Prisma.Profile$educationsArgs<ExtArgs>
+  experiences?: boolean | Prisma.Profile$experiencesArgs<ExtArgs>
   projects?: boolean | Prisma.Profile$projectsArgs<ExtArgs>
   skills?: boolean | Prisma.Profile$skillsArgs<ExtArgs>
   _count?: boolean | Prisma.ProfileCountOutputTypeDefaultArgs<ExtArgs>
@@ -746,8 +746,8 @@ export type ProfileIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $ProfilePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Profile"
   objects: {
-    experiences: Prisma.$ExperiencePayload<ExtArgs>[]
     educations: Prisma.$EducationPayload<ExtArgs>[]
+    experiences: Prisma.$ExperiencePayload<ExtArgs>[]
     projects: Prisma.$ProjectPayload<ExtArgs>[]
     skills: Prisma.$SkillPayload<ExtArgs>[]
   }
@@ -1150,8 +1150,8 @@ readonly fields: ProfileFieldRefs;
  */
 export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  experiences<T extends Prisma.Profile$experiencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$experiencesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExperiencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   educations<T extends Prisma.Profile$educationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$educationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EducationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  experiences<T extends Prisma.Profile$experiencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$experiencesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExperiencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   projects<T extends Prisma.Profile$projectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   skills<T extends Prisma.Profile$skillsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Profile$skillsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SkillPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1580,30 +1580,6 @@ export type ProfileDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Profile.experiences
- */
-export type Profile$experiencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Experience
-   */
-  select?: Prisma.ExperienceSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Experience
-   */
-  omit?: Prisma.ExperienceOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ExperienceInclude<ExtArgs> | null
-  where?: Prisma.ExperienceWhereInput
-  orderBy?: Prisma.ExperienceOrderByWithRelationInput | Prisma.ExperienceOrderByWithRelationInput[]
-  cursor?: Prisma.ExperienceWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ExperienceScalarFieldEnum | Prisma.ExperienceScalarFieldEnum[]
-}
-
-/**
  * Profile.educations
  */
 export type Profile$educationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1625,6 +1601,30 @@ export type Profile$educationsArgs<ExtArgs extends runtime.Types.Extensions.Inte
   take?: number
   skip?: number
   distinct?: Prisma.EducationScalarFieldEnum | Prisma.EducationScalarFieldEnum[]
+}
+
+/**
+ * Profile.experiences
+ */
+export type Profile$experiencesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Experience
+   */
+  select?: Prisma.ExperienceSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Experience
+   */
+  omit?: Prisma.ExperienceOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExperienceInclude<ExtArgs> | null
+  where?: Prisma.ExperienceWhereInput
+  orderBy?: Prisma.ExperienceOrderByWithRelationInput | Prisma.ExperienceOrderByWithRelationInput[]
+  cursor?: Prisma.ExperienceWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExperienceScalarFieldEnum | Prisma.ExperienceScalarFieldEnum[]
 }
 
 /**

@@ -58,7 +58,8 @@ export const ModelName = {
   Skill: 'Skill',
   Technology: 'Technology',
   ExperienceHighlight: 'ExperienceHighlight',
-  ProjectHighlight: 'ProjectHighlight'
+  ProjectHighlight: 'ProjectHighlight',
+  AssistantExchange: 'AssistantExchange'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -153,6 +154,16 @@ export const ProjectHighlightScalarFieldEnum = {
 } as const
 
 export type ProjectHighlightScalarFieldEnum = (typeof ProjectHighlightScalarFieldEnum)[keyof typeof ProjectHighlightScalarFieldEnum]
+
+
+export const AssistantExchangeScalarFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer',
+  createdAt: 'createdAt'
+} as const
+
+export type AssistantExchangeScalarFieldEnum = (typeof AssistantExchangeScalarFieldEnum)[keyof typeof AssistantExchangeScalarFieldEnum]
 
 
 export const SortOrder = {

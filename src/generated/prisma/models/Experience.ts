@@ -221,8 +221,8 @@ export type ExperienceWhereInput = {
   description?: Prisma.StringFilter<"Experience"> | string
   profileId?: Prisma.IntFilter<"Experience"> | number
   profile?: Prisma.XOR<Prisma.ProfileScalarRelationFilter, Prisma.ProfileWhereInput>
-  technologies?: Prisma.TechnologyListRelationFilter
   highlights?: Prisma.ExperienceHighlightListRelationFilter
+  technologies?: Prisma.TechnologyListRelationFilter
 }
 
 export type ExperienceOrderByWithRelationInput = {
@@ -232,8 +232,8 @@ export type ExperienceOrderByWithRelationInput = {
   description?: Prisma.SortOrder
   profileId?: Prisma.SortOrder
   profile?: Prisma.ProfileOrderByWithRelationInput
-  technologies?: Prisma.TechnologyOrderByRelationAggregateInput
   highlights?: Prisma.ExperienceHighlightOrderByRelationAggregateInput
+  technologies?: Prisma.TechnologyOrderByRelationAggregateInput
 }
 
 export type ExperienceWhereUniqueInput = Prisma.AtLeast<{
@@ -247,8 +247,8 @@ export type ExperienceWhereUniqueInput = Prisma.AtLeast<{
   description?: Prisma.StringFilter<"Experience"> | string
   profileId?: Prisma.IntFilter<"Experience"> | number
   profile?: Prisma.XOR<Prisma.ProfileScalarRelationFilter, Prisma.ProfileWhereInput>
-  technologies?: Prisma.TechnologyListRelationFilter
   highlights?: Prisma.ExperienceHighlightListRelationFilter
+  technologies?: Prisma.TechnologyListRelationFilter
 }, "id" | "profileId_company_role">
 
 export type ExperienceOrderByWithAggregationInput = {
@@ -280,8 +280,8 @@ export type ExperienceCreateInput = {
   role: string
   description: string
   profile: Prisma.ProfileCreateNestedOneWithoutExperiencesInput
-  technologies?: Prisma.TechnologyCreateNestedManyWithoutExperiencesInput
   highlights?: Prisma.ExperienceHighlightCreateNestedManyWithoutExperienceInput
+  technologies?: Prisma.TechnologyCreateNestedManyWithoutExperiencesInput
 }
 
 export type ExperienceUncheckedCreateInput = {
@@ -290,8 +290,8 @@ export type ExperienceUncheckedCreateInput = {
   role: string
   description: string
   profileId: number
-  technologies?: Prisma.TechnologyUncheckedCreateNestedManyWithoutExperiencesInput
   highlights?: Prisma.ExperienceHighlightUncheckedCreateNestedManyWithoutExperienceInput
+  technologies?: Prisma.TechnologyUncheckedCreateNestedManyWithoutExperiencesInput
 }
 
 export type ExperienceUpdateInput = {
@@ -299,8 +299,8 @@ export type ExperienceUpdateInput = {
   role?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   profile?: Prisma.ProfileUpdateOneRequiredWithoutExperiencesNestedInput
-  technologies?: Prisma.TechnologyUpdateManyWithoutExperiencesNestedInput
   highlights?: Prisma.ExperienceHighlightUpdateManyWithoutExperienceNestedInput
+  technologies?: Prisma.TechnologyUpdateManyWithoutExperiencesNestedInput
 }
 
 export type ExperienceUncheckedUpdateInput = {
@@ -309,8 +309,8 @@ export type ExperienceUncheckedUpdateInput = {
   role?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   profileId?: Prisma.IntFieldUpdateOperationsInput | number
-  technologies?: Prisma.TechnologyUncheckedUpdateManyWithoutExperiencesNestedInput
   highlights?: Prisma.ExperienceHighlightUncheckedUpdateManyWithoutExperienceNestedInput
+  technologies?: Prisma.TechnologyUncheckedUpdateManyWithoutExperiencesNestedInput
 }
 
 export type ExperienceCreateManyInput = {
@@ -488,8 +488,8 @@ export type ExperienceCreateWithoutProfileInput = {
   company: string
   role: string
   description: string
-  technologies?: Prisma.TechnologyCreateNestedManyWithoutExperiencesInput
   highlights?: Prisma.ExperienceHighlightCreateNestedManyWithoutExperienceInput
+  technologies?: Prisma.TechnologyCreateNestedManyWithoutExperiencesInput
 }
 
 export type ExperienceUncheckedCreateWithoutProfileInput = {
@@ -497,8 +497,8 @@ export type ExperienceUncheckedCreateWithoutProfileInput = {
   company: string
   role: string
   description: string
-  technologies?: Prisma.TechnologyUncheckedCreateNestedManyWithoutExperiencesInput
   highlights?: Prisma.ExperienceHighlightUncheckedCreateNestedManyWithoutExperienceInput
+  technologies?: Prisma.TechnologyUncheckedCreateNestedManyWithoutExperiencesInput
 }
 
 export type ExperienceCreateOrConnectWithoutProfileInput = {
@@ -637,8 +637,8 @@ export type ExperienceUpdateWithoutProfileInput = {
   company?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  technologies?: Prisma.TechnologyUpdateManyWithoutExperiencesNestedInput
   highlights?: Prisma.ExperienceHighlightUpdateManyWithoutExperienceNestedInput
+  technologies?: Prisma.TechnologyUpdateManyWithoutExperiencesNestedInput
 }
 
 export type ExperienceUncheckedUpdateWithoutProfileInput = {
@@ -646,8 +646,8 @@ export type ExperienceUncheckedUpdateWithoutProfileInput = {
   company?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  technologies?: Prisma.TechnologyUncheckedUpdateManyWithoutExperiencesNestedInput
   highlights?: Prisma.ExperienceHighlightUncheckedUpdateManyWithoutExperienceNestedInput
+  technologies?: Prisma.TechnologyUncheckedUpdateManyWithoutExperiencesNestedInput
 }
 
 export type ExperienceUncheckedUpdateManyWithoutProfileInput = {
@@ -688,13 +688,13 @@ export type ExperienceUncheckedUpdateManyWithoutTechnologiesInput = {
  */
 
 export type ExperienceCountOutputType = {
-  technologies: number
   highlights: number
+  technologies: number
 }
 
 export type ExperienceCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  technologies?: boolean | ExperienceCountOutputTypeCountTechnologiesArgs
   highlights?: boolean | ExperienceCountOutputTypeCountHighlightsArgs
+  technologies?: boolean | ExperienceCountOutputTypeCountTechnologiesArgs
 }
 
 /**
@@ -710,15 +710,15 @@ export type ExperienceCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.E
 /**
  * ExperienceCountOutputType without action
  */
-export type ExperienceCountOutputTypeCountTechnologiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TechnologyWhereInput
+export type ExperienceCountOutputTypeCountHighlightsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExperienceHighlightWhereInput
 }
 
 /**
  * ExperienceCountOutputType without action
  */
-export type ExperienceCountOutputTypeCountHighlightsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ExperienceHighlightWhereInput
+export type ExperienceCountOutputTypeCountTechnologiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TechnologyWhereInput
 }
 
 
@@ -729,8 +729,8 @@ export type ExperienceSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   description?: boolean
   profileId?: boolean
   profile?: boolean | Prisma.ProfileDefaultArgs<ExtArgs>
-  technologies?: boolean | Prisma.Experience$technologiesArgs<ExtArgs>
   highlights?: boolean | Prisma.Experience$highlightsArgs<ExtArgs>
+  technologies?: boolean | Prisma.Experience$technologiesArgs<ExtArgs>
   _count?: boolean | Prisma.ExperienceCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["experience"]>
 
@@ -763,8 +763,8 @@ export type ExperienceSelectScalar = {
 export type ExperienceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "company" | "role" | "description" | "profileId", ExtArgs["result"]["experience"]>
 export type ExperienceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   profile?: boolean | Prisma.ProfileDefaultArgs<ExtArgs>
-  technologies?: boolean | Prisma.Experience$technologiesArgs<ExtArgs>
   highlights?: boolean | Prisma.Experience$highlightsArgs<ExtArgs>
+  technologies?: boolean | Prisma.Experience$technologiesArgs<ExtArgs>
   _count?: boolean | Prisma.ExperienceCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ExperienceIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -778,8 +778,8 @@ export type $ExperiencePayload<ExtArgs extends runtime.Types.Extensions.Internal
   name: "Experience"
   objects: {
     profile: Prisma.$ProfilePayload<ExtArgs>
-    technologies: Prisma.$TechnologyPayload<ExtArgs>[]
     highlights: Prisma.$ExperienceHighlightPayload<ExtArgs>[]
+    technologies: Prisma.$TechnologyPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1182,8 +1182,8 @@ readonly fields: ExperienceFieldRefs;
 export interface Prisma__ExperienceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   profile<T extends Prisma.ProfileDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProfileDefaultArgs<ExtArgs>>): Prisma.Prisma__ProfileClient<runtime.Types.Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  technologies<T extends Prisma.Experience$technologiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Experience$technologiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TechnologyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   highlights<T extends Prisma.Experience$highlightsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Experience$highlightsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExperienceHighlightPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  technologies<T extends Prisma.Experience$technologiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Experience$technologiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TechnologyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1619,30 +1619,6 @@ export type ExperienceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.In
 }
 
 /**
- * Experience.technologies
- */
-export type Experience$technologiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Technology
-   */
-  select?: Prisma.TechnologySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Technology
-   */
-  omit?: Prisma.TechnologyOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.TechnologyInclude<ExtArgs> | null
-  where?: Prisma.TechnologyWhereInput
-  orderBy?: Prisma.TechnologyOrderByWithRelationInput | Prisma.TechnologyOrderByWithRelationInput[]
-  cursor?: Prisma.TechnologyWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.TechnologyScalarFieldEnum | Prisma.TechnologyScalarFieldEnum[]
-}
-
-/**
  * Experience.highlights
  */
 export type Experience$highlightsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1664,6 +1640,30 @@ export type Experience$highlightsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.ExperienceHighlightScalarFieldEnum | Prisma.ExperienceHighlightScalarFieldEnum[]
+}
+
+/**
+ * Experience.technologies
+ */
+export type Experience$technologiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Technology
+   */
+  select?: Prisma.TechnologySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Technology
+   */
+  omit?: Prisma.TechnologyOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TechnologyInclude<ExtArgs> | null
+  where?: Prisma.TechnologyWhereInput
+  orderBy?: Prisma.TechnologyOrderByWithRelationInput | Prisma.TechnologyOrderByWithRelationInput[]
+  cursor?: Prisma.TechnologyWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TechnologyScalarFieldEnum | Prisma.TechnologyScalarFieldEnum[]
 }
 
 /**

@@ -57,3 +57,8 @@ export type ExperienceHighlight = Prisma.ExperienceHighlightModel
  * 
  */
 export type ProjectHighlight = Prisma.ProjectHighlightModel
+/**
+ * Model AssistantExchange
+ * 
+ */
+export type AssistantExchange = Prisma.AssistantExchangeModel
